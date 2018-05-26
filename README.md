@@ -26,12 +26,12 @@ $ npm install --save human-id
 ## Usage
 
 ```
-const nameId = require('name-id');
-const id = nameId();
+const humanId = require('human-id');
+const id = humanId();
 
 // RareGeckosJam
-nameId();
+humanId();
 
  // rare-geckos-jam
-nameId({separator:'-',capitalize:false});
+humanId({separator:'-',capitalize:false});
 ```

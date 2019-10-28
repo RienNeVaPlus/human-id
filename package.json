@@ -1,10 +1,13 @@
 {
   "name": "human-id",
-  "version": "1.0.2",
-  "description": "Returns a humand readable ID",
-  "main": "index.js",
+  "version": "2.0.0",
+  "description": "Returns from a pool of 10m human-readable IDs",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "jsnext:main": "src/index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "tsc -w",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -13,7 +16,8 @@
   "keywords": [
     "human",
     "readable",
-    "id"
+    "id",
+    "identifier"
   ],
   "author": "RienNeVaPlus",
   "license": "MIT",

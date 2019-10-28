@@ -1,8 +1,14 @@
-### Generates human readable ID strings by chaning common short words of the english language. ###
+<h3 align="center">💃🆔</h3>
 
-Using words (instead of numbers) to identify datasets provides various advantages when humans are involved. `human-id` generates word ids from a pool of 10 006 400 unique IDs.
+## Human-Readable Identifiers
 
-No dependencies.
+> Using words to identify datasets (instead of numbers) provides various advantages when humans are involved, ie increased distinction and rememberability.
+
+Human-ID generates readable strings by chaining common short words of the english language in a semi-meaningful way.
+The result is concatenated of `adjective + noun + verb` resulting in a total of **13 024 368** possible combinations.
+
+- **SFW**: no bad words; family friendly results
+- No dependencies
 
 ## Examples
 
@@ -17,14 +23,20 @@ No dependencies.
 
 ## Install
 
+Yarn
 ```
-$ npm install --save human-id
+yarn add human-id
+```
+
+NPM
+```
+npm install --save human-id
 ```
 
 ## Usage
 
 ```js
-const humanId = require('human-id');
+import { humanId } from 'human-id'
 
 // RareGeckosJam
 humanId();
@@ -35,3 +47,4 @@ humanId({
   capitalize: false
 });
 ```
+<h6 align="center">💃🆔</h6>

@@ -1,6 +1,6 @@
 {
   "name": "human-id",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Returns from a pool of 10m human-readable IDs",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/safebyte/human-id.git"
+    "url": "git+https://github.com/RienNeVaPlus/human-id.git"
   },
   "keywords": [
     "human",
@@ -19,10 +19,10 @@
     "id",
     "identifier"
   ],
-  "author": "RienNeVaPlus",
+  "author": "RienNeVaPlus <?@rienneva.plus>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/safebyte/human-id/issues"
+    "url": "https://github.com/RienNeVaPlus/human-id/issues"
   },
-  "homepage": "https://github.com/safebyte/human-id#readme"
+  "homepage": "https://github.com/RienNeVaPlus/human-id#readme"
 }

@@ -74,12 +74,12 @@ List of possible values for the second part of the human id.
 List of possible values for the third part of the human id.
 
 ### `poolSize: number`
-Returns 13024368 - the number of possible combinations.
+Returns 15000000 - the number of possible combinations.
 
 ### `minLength: number` 
 The length of the shortest possible id (8).
 
 ### `maxLength: number` 
-The length of the longest possible id (24).
+The length of the longest possible id (19).
 
 <h6 align="center">💃🆔</h6>

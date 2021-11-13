@@ -2,10 +2,13 @@
 
 ## Human-Readable Identifiers
 
+![Downloads](https://img.shields.io/npm/dm/human-id)
+![License](https://img.shields.io/npm/l/human-id)
+
 > Using words to identify datasets (instead of numbers) provides various advantages when humans are involved, ie increased distinction and rememberability.
 
 Human-ID generates readable strings by chaining common short words of the english language in a semi-meaningful way.
-The result is concatenated of `adjective + noun + verb` resulting in a total of **13 024 368** possible combinations.
+The result is concatenated of `adjective + noun + verb` resulting in a pool size of **15 000 000** possible combinations.
 
 - **SFW**: no bad words; family friendly results
 - No dependencies
@@ -13,13 +16,13 @@ The result is concatenated of `adjective + noun + verb` resulting in a total of 
 ## Examples
 
 - FortyGhostsTalk
-- CalmPanthersDream
+- CalmSnailsDream
 - TastyRocksSparkle
 - HealthyCowsSmile
 - AfraidWallsExist
 - StrangeCarsRush
-- TwoKangaroosSing
-- HappyDolphinsJump
+- TwoLizardsSing
+- HappyLionsJump
 
 ## Install
 
@@ -39,16 +42,17 @@ npm install human-id
 import humanId from 'human-id'
 
 // RareGeckosJam
-humanId();
+humanId()
 
 // Rare~Geckos~Jam
-humanId('~');
+// alias for { separator: '~' }
+humanId('~')
 
 // rare-geckos-jam
 humanId({
   separator: '-',
-  capitalize: false
-});
+  capitalize: false,
+})
 ```
 
 ## API

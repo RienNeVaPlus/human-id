@@ -7,7 +7,7 @@
   "jsnext:main": "src/index.ts",
   "scripts": {
     "start": "tsc -w",
-    "build": "tsc",
+    "build": "rm -rf ./dist && tsc",
     "examples": "tsc && node ./dist/examples.js"
   },
   "repository": {

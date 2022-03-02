@@ -26,7 +26,7 @@ export const maxLength: number = 19
 // 	longest(verbs).length
 // ].reduce((a,b) => a + b)
 
-export const poolSize: number = adjectives.length * nouns.length * verbs.length * adverbs.length
+export const poolSize: number = adjectives.length * nouns.length * verbs.length
 
 export interface Options {
 	separator?: string

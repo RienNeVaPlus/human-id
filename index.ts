@@ -61,6 +61,6 @@ export default humanId
 // console.log('adjectives', adjectives.length)
 // console.log('nouns', nouns.length)
 // console.log('verbs', verbs.length)
-// console.log({'poolSize', poolSize) })
+// console.log('poolSize', poolSize))
 // console.log('minLength', minLength)
 // console.log('maxLength', maxLength)

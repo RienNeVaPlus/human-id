@@ -4,6 +4,8 @@ export const nouns: string[] = ["apes", "animals", "areas", "bars", "banks", "ba
 
 export const verbs: string[] = ["accept", "act", "add", "admire", "agree", "allow", "appear", "argue", "arrive", "ask", "attack", "attend", "bake", "bathe", "battle", "beam", "beg", "begin", "behave", "bet", "boil", "bow", "brake", "brush", "build", "burn", "buy", "call", "camp", "care", "carry", "change", "cheat", "check", "cheer", "chew", "clap", "clean", "cough", "count", "cover", "crash", "create", "cross", "cry", "cut", "dance", "decide", "deny", "design", "dig", "divide", "do", "double", "doubt", "draw", "dream", "dress", "drive", "drop", "drum", "eat", "end", "enter", "enjoy", "exist", "fail", "fall", "feel", "fetch", "film", "find", "fix", "flash", "float", "flow", "fly", "fold", "follow", "fry", "give", "glow", "go", "grab", "greet", "grin", "grow", "guess", "hammer", "hang", "happen", "heal", "hear", "help", "hide", "hope", "hug", "hunt", "invent", "invite", "itch", "jam", "jog", "join", "joke", "judge", "juggle", "jump", "kick", "kiss", "kneel", "knock", "know", "laugh", "lay", "lead", "learn", "leave", "lick", "like", "lie", "listen", "live", "look", "lose", "love", "make", "march", "marry", "mate", "matter", "melt", "mix", "move", "nail", "notice", "obey", "occur", "open", "own", "pay", "peel", "play", "poke", "post", "press", "prove", "pull", "pump", "pick", "punch", "push", "raise", "read", "refuse", "relate", "relax", "remain", "repair", "repeat", "reply", "report", "rescue", "rest", "retire", "return", "rhyme", "ring", "roll", "rule", "run", "rush", "say", "scream", "see", "search", "sell", "send", "serve", "shake", "share", "shave", "shine", "show", "shop", "shout", "sin", "sink", "sing", "sip", "sit", "sleep", "slide", "smash", "smell", "smile", "smoke", "sneeze", "sniff", "sort", "speak", "spend", "stand", "start", "stay", "stick", "stop", "stare", "study", "suffer", "swim", "switch", "take", "talk", "tan", "tap", "taste", "teach", "tease", "tell", "thank", "think", "throw", "tickle", "tie", "trade", "train", "travel", "try", "turn", "type", "unite", "vanish", "visit", "wait", "walk", "warn", "wash", "watch", "wave", "wear", "win", "wink", "wish", "wonder", "work", "worry", "write", "yawn", "yell"]
 
+export const adverbs: string[] = ["bravely", "brightly", "busily", "daily", "freely", "hungrily", "joyously", "knowlingly", "lazily", "oddly", "mysteriously", "noisily", "politely", "quickly", "quietly", "rapidly", "safely", "sleepily", "slowly", "truly", "yearly"]
+
 function random(arr: string[]): string { return arr[Math.floor(Math.random()*arr.length)] }
 // function longest(arr: string[]){ return arr.reduce((a, b) => a.length > b.length ? a : b) }
 // function shortest(arr: string[]){ return arr.reduce((a, b) => a.length < b.length ? a : b) }
@@ -26,19 +28,22 @@ export const maxLength: number = 19
 
 export const poolSize: number = adjectives.length * nouns.length * verbs.length
 
-interface Options {
+export interface Options {
 	separator?: string
 	capitalize?: boolean
+	adjectiveCount?: number
+	addAdverb?: boolean
 }
 
 export function humanId(options: Options | string = {}): string {
 	if(typeof options === 'string') options = { separator: options }
-	const { separator = '', capitalize = true } = options
+	const { separator = '', capitalize = true, adjectiveCount = 1, addAdverb = false } = options
 
 	let res = [
-		random(adjectives),
+		...[...Array(adjectiveCount)].map(_=>random(adjectives)),
 		random(nouns),
-		random(verbs)
+		random(verbs),
+		...( (addAdverb) ? [random(adverbs)] : []),
 	]
 
 	if(capitalize)

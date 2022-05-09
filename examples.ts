@@ -1,29 +1,24 @@
-import {humanId, Options, adjectives, adverbs, poolSize} from './index'
+import {humanId, maxLength, minLength, poolSize} from './index'
 
-const samples = 15
+const samples = 10
 const list = [...Array(samples)]
 
-console.info(`\n/*\n * humanId()\n */`)
-for(const _ of list){ console.log(`# ${humanId()}`) }
+console.info(`\npoolSize()               // = ${poolSize().toLocaleString()}`)
+console.info(`minLength()              // = ${minLength().toLocaleString()}`)
+console.info(`maxLength()              // = ${maxLength().toLocaleString()}`)
+console.info(`\nhumanId()`)
+list.forEach(_ => console.log(`> ${humanId()}`))
 
-console.info(`\n/*\n * humanId(\'-\') // or { separator: '-' }`)
-for(const _ of list){ console.log(` * • ${humanId('-')}`) }
+console.info(`\nhumanId('-')             // or { "separator": "-" }`)
+list.forEach(_ => console.log(`> ${humanId('-')}`))
 
-console.info(` */\n\nhumanId({ capitalize: false })`)
-for(const _ of list){ console.log(`> ${humanId({capitalize:false})}`) }
+console.info(`\nhumanId(false)           // or { "capitalize": false }`)
+list.forEach(_ => console.log(`> ${humanId(false)}`))
 
-console.info(` */\n\nhumanId({ adjectiveCount:2, addAdverb: true })`)
-for(const _ of list){ console.log(`> ${humanId({ adjectiveCount:2, addAdverb: true })}`) }
-
-
-function withCommas(str: any): string { return (str+'').replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-
-function poolSizeByOptions( opts : Options ): string {
-	const { adjectiveCount = 1, addAdverb = false } = opts
-	return withCommas( poolSize * Math.pow(adjectives.length, adjectiveCount-1) * (addAdverb?adverbs.length:1.0) )
-}
-
-console.log({'2 adjective poolSize': withCommas(poolSizeByOptions({adjectiveCount:2})) })
-console.log({'3 adjective poolSize': withCommas(poolSizeByOptions({adjectiveCount:3})) })
-console.log({'add adverb poolSize': withCommas(poolSizeByOptions({addAdverb:true})) })
-console.log({'2 adjective & add adverb poolSize': withCommas(poolSizeByOptions({adjectiveCount:2, addAdverb:true})) })
+const options = { adjectiveCount: 2, addAdverb: true, separator: '.' }
+console.info(`\nconst options = ${JSON.stringify(options, null, ' ')}`)
+console.info(`poolSize(options)        // = ${poolSize(options).toLocaleString()}`)
+console.info(`minLength(options)       // = ${minLength(options).toLocaleString()}`)
+console.info(`maxLength(options)       // = ${maxLength(options).toLocaleString()}`)
+console.info(`humanId(options)`)
+list.forEach(_ => console.log(`> ${humanId(options)}`))

@@ -7,26 +7,8 @@ export const verbs: string[] = ["accept", "act", "add", "admire", "agree", "allo
 export const adverbs: string[] = ["bravely", "brightly", "busily", "daily", "freely", "hungrily", "joyously", "knowlingly", "lazily", "oddly", "mysteriously", "noisily", "politely", "quickly", "quietly", "rapidly", "safely", "sleepily", "slowly", "truly", "yearly"]
 
 function random(arr: string[]): string { return arr[Math.floor(Math.random()*arr.length)] }
-// function longest(arr: string[]){ return arr.reduce((a, b) => a.length > b.length ? a : b) }
-// function shortest(arr: string[]){ return arr.reduce((a, b) => a.length < b.length ? a : b) }
-
-// save some time by hard coding the minLength
-export const minLength: number = 8
-// [
-// 	shortest(adjectives).length,
-// 	shortest(nouns).length,
-// 	shortest(verbs).length
-// ].reduce((a,b) => a + b);
-
-// save some time by hard coding the maxLength
-export const maxLength: number = 19
-// [
-// 	longest(adjectives).length,
-// 	longest(nouns).length,
-// 	longest(verbs).length
-// ].reduce((a,b) => a + b)
-
-export const poolSize: number = adjectives.length * nouns.length * verbs.length
+function longest(arr: string[]){ return arr.reduce((a, b) => a.length > b.length ? a : b) }
+function shortest(arr: string[]){ return arr.reduce((a, b) => a.length < b.length ? a : b) }
 
 export interface Options {
 	separator?: string
@@ -35,12 +17,24 @@ export interface Options {
 	addAdverb?: boolean
 }
 
-export function humanId(options: Options | string = {}): string {
+/**
+ * Returns the human-id
+ *
+ * @param {Options|string|boolean} [options = {}]
+ * @returns {string}
+ */
+export function humanId(options: Options | string | boolean = {}): string {
 	if(typeof options === 'string') options = { separator: options }
-	const { separator = '', capitalize = true, adjectiveCount = 1, addAdverb = false } = options
+  if(typeof options === 'boolean') options = { capitalize: options }
+	const {
+    separator = '',
+    capitalize = true,
+    adjectiveCount = 1,
+    addAdverb = false
+  } = options
 
 	let res = [
-		...[...Array(adjectiveCount)].map(_=>random(adjectives)),
+		...[...Array(adjectiveCount)].map(_ => random(adjectives)),
 		random(nouns),
 		random(verbs),
 		...( (addAdverb) ? [random(adverbs)] : []),
@@ -52,14 +46,47 @@ export function humanId(options: Options | string = {}): string {
 	return res.join(separator)
 }
 
-export default humanId
+/**
+ * Returns the pool size for a set of options
+ *
+ * @param {Options} [options = {}]
+ * @returns {number}
+ */
+export function poolSize(options: Options = {}): number {
+  const { adjectiveCount = 1, addAdverb = false } = options
+  return (adjectives.length * adjectiveCount) * nouns.length * verbs.length * (addAdverb ? adverbs.length : 1)
+}
 
-// console.log('longest adjective', longest(adjectives), longest(adjectives).length)
-// console.log('longest noun', longest(nouns), longest(nouns).length)
-// console.log('longest verb', longest(verbs), longest(verbs).length)
-// console.log('adjectives', adjectives.length)
-// console.log('nouns', nouns.length)
-// console.log('verbs', verbs.length)
-// console.log('poolSize', poolSize)
-// console.log('minLength', minLength)
-// console.log('maxLength', maxLength)
+/**
+ * Returns the max length for a set of options
+ *
+ * @param {Options} [options = {}]
+ * @returns {number}
+ */
+export function maxLength(options: Options = {}): number {
+  const { adjectiveCount = 1, addAdverb = false, separator = '' } = options
+  return (longest(adjectives).length * adjectiveCount) +
+    (adjectiveCount * separator.length) +
+    longest(nouns).length +
+    separator.length +
+    longest(verbs).length +
+    (addAdverb ? longest(adverbs).length + separator.length : 0)
+}
+
+/**
+ * Returns the min length for a set of options
+ *
+ * @param {Options} [options = {}]
+ * @returns {number}
+ */
+export function minLength(options: Options = {}): number {
+  const { adjectiveCount = 1, addAdverb = false, separator = '' } = options
+  return (shortest(adjectives).length * adjectiveCount) +
+    (adjectiveCount * separator.length) +
+    shortest(nouns).length +
+    separator.length +
+    shortest(verbs).length +
+    (addAdverb ? shortest(adverbs).length + separator.length : 0)
+}
+
+export default humanId

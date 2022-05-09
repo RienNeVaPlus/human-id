@@ -1,10 +1,9 @@
 {
   "name": "human-id",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Returns from a pool of 10m human-readable IDs",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "jsnext:main": "src/index.ts",
   "scripts": {
     "start": "tsc -w",
     "build": "rm -rf ./dist && tsc",
@@ -21,11 +20,11 @@
     "identifier"
   ],
   "author": "RienNeVaPlus <?@rienneva.plus>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/RienNeVaPlus/human-id/issues"
+	"homepage": "https://github.com/RienNeVaPlus/human-id#readme",
+	"license": "MIT",
+	"bugs": {
+	  "url": "https://github.com/RienNeVaPlus/human-id/issues"
   },
-  "homepage": "https://github.com/RienNeVaPlus/human-id#readme",
   "devDependencies": {
     "typescript": "^4.4.4"
   }

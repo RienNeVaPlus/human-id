@@ -31,7 +31,6 @@ export const poolSize: number = adjectives.length * nouns.length * verbs.length
 export interface Options {
 	separator?: string
 	capitalize?: boolean
-	multiplyPool?: number
 	adjectiveCount?: number
 	addAdverb?: boolean
 }

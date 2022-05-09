@@ -71,7 +71,7 @@ const options = {
 }
 
 humanId(options)   // Ten.Wet.Files.Cheer.Lazily
-poolSize(options)  // 630.000.000
+poolSize(options)  // 630,000,000
 minLength(options) //          20
 maxLength(options) //          41
 ```

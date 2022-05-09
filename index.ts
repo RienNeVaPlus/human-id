@@ -29,7 +29,6 @@ export const poolSize: number = adjectives.length * nouns.length * verbs.length
 interface Options {
 	separator?: string
 	capitalize?: boolean
-	multiplyPool?: number
 }
 
 export function humanId(options: Options | string = {}): string {

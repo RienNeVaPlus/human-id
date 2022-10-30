@@ -1,4 +1,4 @@
-import {humanId, maxLength, minLength, poolSize} from './index'
+import { humanId, maxLength, minLength, poolSize, extend } from './index'
 
 const samples = 10
 const list = [...Array(samples)]
@@ -22,3 +22,12 @@ console.info(`minLength(options)       // = ${minLength(options).toLocaleString(
 console.info(`maxLength(options)       // = ${maxLength(options).toLocaleString()}`)
 console.info(`humanId(options)`)
 list.forEach(_ => console.log(`> ${humanId(options)}`))
+
+console.info(`Test pool data update---`)
+extend({
+    adjectives: ['codely', 'stupidly', 'briishly'],
+    nouns: (ex) => [...ex, 'rango', 'tango', 'django'],
+    adverbs: (ex) => [...ex, 'menacily', 'testily'],
+    verbs: ['new', 'verbs'],
+})
+list.forEach(_ => console.log(`> ${humanId({...options, adjectiveCount: 1})}`))

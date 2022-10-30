@@ -76,6 +76,22 @@ minLength(options) //          20
 maxLength(options) //          41
 ```
 
+## Extend existing pool data
+
+Updating/Extending existing nouns/adjectives/verbs/adverbs is fairly simple like this: 
+
+`(each update key supports either an array of new strings or an update function)`
+
+```js
+const options = {
+    adjectives: ['completely', 'newy'],
+    nouns: (curr) => [...curr, 'two', 'new', 'nouns'],
+    verbs: ['replace', 'verbs', 'with', 'these'],
+}
+
+extend(options)
+```
+
 ## API
 
 ### `humanId(options?: string | Option): string`
@@ -95,6 +111,18 @@ The length of the shortest possible id for a given set of options.
 
 ### `maxLength(options?: Option): number`
 The length of the longest possible id for a given set of options.
+
+### `extend(config?: ExtendConfig): void`
+Extends the existing possible node values (data set). 
+
+The ExtendConfig comprises an object with:
+
+**KEY:** [adjectives | nouns | verbs | adverbs]
+
+**VALUE:** 
+*An array of string *(string[])* or an update function:*
+
+*(curr : string[]) => string[]*
 
 ### `adjectives: string[]`
 List of possible values for the first part of the human id.

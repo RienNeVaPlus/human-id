@@ -39,7 +39,7 @@ npm install human-id
 ## Usage
 
 ```js
-import humanId from 'human-id'
+import { humanId } from 'human-id'
 
 // RareGeckosJam
 humanId()

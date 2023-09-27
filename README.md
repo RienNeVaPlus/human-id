@@ -38,6 +38,15 @@ npm install human-id
 
 ## Usage
 
+### Command line
+
+```sh
+npx human-id
+# RareGeckosJam
+```
+
+### Programmatic
+
 ```js
 import humanId from 'human-id'
 

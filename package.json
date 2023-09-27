@@ -6,7 +6,7 @@
   "types": "dist/index.d.ts",
   "bin": "dist/cli.js",
   "scripts": {
-    "start": "tsc -w",
+    "dev": "tsc -w",
     "build": "rm -rf ./dist && tsc",
     "examples": "tsc && node ./dist/examples.js"
   },

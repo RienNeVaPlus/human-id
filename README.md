@@ -98,9 +98,9 @@ Use the following arguments to modify the default options or print multiple resu
 | `a`, `adverb`, `addAdverb` | Sets `option.addAdverb` to `true`                 |
 | `l`, `lower`, `lowercase`  | Sets `option.capitalize` to `false`               |
 | `space`                    | Sets `option.separator` to an empty space ` `     |
-| `number`                   | Sets `option.adjectiveCount` to the given integer |
+| any number                 | Sets `option.adjectiveCount` to the given integer |
 | any single character       | Sets `option.separator` to the character          |
-| `number` + `x`             | Repeats the output `number` times                 | 
+| any number followed by `x` | Repeats the output `number` times                 | 
 
 ### Example
 

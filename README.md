@@ -43,12 +43,16 @@ npm install human-id
 ```sh
 npx human-id
 # RareGeckosJam
+
+npx human-id lowercase + 2x
+# rare+geckos+jam
+# healthy+cows+smile
 ```
 
 ### Programmatic
 
 ```js
-import humanId from 'human-id'
+import {humanId, poolSize, minLength, maxLength} from 'human-id'
 
 // RareGeckosJam
 humanId()
@@ -85,9 +89,31 @@ minLength(options) //          20
 maxLength(options) //          41
 ```
 
+## Executable arguments
+
+Use the following arguments to modify the default options or print multiple results.
+
+| Argument                   | Effect                                            |
+| -------------------------- | ------------------------------------------------- |
+| `a`, `adverb`, `addAdverb` | Sets `option.addAdverb` to `true`                 |
+| `l`, `lower`, `lowercase`  | Sets `option.capitalize` to `false`               |
+| `space`                    | Sets `option.separator` to an empty space ` `     |
+| `number`                   | Sets `option.adjectiveCount` to the given integer |
+| any single character       | Sets `option.separator` to the character          |
+| `number` + `x`             | Repeats the output `number` times                 | 
+
+### Example
+
+```bash
+npx human-id adverb lower 2 _ 3x
+# clever_shaggy_memes_sit_quietly
+# cuddly_spicy_boxes_wave_politely
+# sweet_fair_wombats_fetch_bravely
+```
+
 ## API
 
-### `humanId(options?: string | Option): string`
+#### `humanId(options?: string | Option): string`
 Generates a human ID. **Options** can be a `string` (separator), a `boolean` (capitalize) or an `Options` object of:
 - **separator** `string = ''` - Separates the words from each other
 - **capitalize** `boolean = true` - Whether to transform the first character of each word to upper case
@@ -96,26 +122,27 @@ Generates a human ID. **Options** can be a `string` (separator), a `boolean` (ca
 
 *This function is also available as the default export*
 
-### `poolSize(options?: string | Option): number`
+#### `poolSize(options?: string | Option): number`
 Returns the number of possible combinations for a given set of options.
 
-### `minLength(options?: Option): number`
+#### `minLength(options?: Option): number`
 The length of the shortest possible id for a given set of options.
 
-### `maxLength(options?: Option): number`
+#### `maxLength(options?: Option): number`
 The length of the longest possible id for a given set of options.
 
-### `adjectives: string[]`
+#### `adjectives: string[]`
 List of possible values for the first part of the human id.
 
-### `nouns: string[]`
+#### `nouns: string[]`
 List of possible values for the second part of the human id.
 
-### `verbs: string[]`
+#### `verbs: string[]`
 List of possible values for the third part of the human id.
 
-### `adverbs: string[]`
+#### `adverbs: string[]`
 List of possible values for the optional fourth part of the human id.
+
 
 <h6 align="center">💃🆔</h6>
 

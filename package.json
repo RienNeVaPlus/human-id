@@ -1,6 +1,6 @@
 {
   "name": "human-id",
-  "version": "4.0.0",
+  "version": "4.1.0",
   "description": "Returns from a pool of 10m human-readable IDs",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

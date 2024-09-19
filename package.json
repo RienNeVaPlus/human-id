@@ -21,10 +21,10 @@
     "identifier"
   ],
   "author": "RienNeVaPlus <?@rienneva.plus>",
-	"homepage": "https://github.com/RienNeVaPlus/human-id#readme",
-	"license": "MIT",
-	"bugs": {
-	  "url": "https://github.com/RienNeVaPlus/human-id/issues"
+  "homepage": "https://github.com/RienNeVaPlus/human-id#readme",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RienNeVaPlus/human-id/issues"
   },
   "devDependencies": {
     "typescript": "^4.4.4"

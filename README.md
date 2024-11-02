@@ -2,8 +2,8 @@
 
 ## Human-Readable Identifiers
 
-![Downloads](https://img.shields.io/npm/dm/human-id)
-![License](https://img.shields.io/npm/l/human-id)
+[![Downloads](https://img.shields.io/npm/dm/human-id)](https://www.npmjs.com/human-id)
+[![License](https://img.shields.io/npm/l/human-id)](https://github.com/RienNeVaPlus/human-id/blob/master/LICENSE)
 
 > Using words to identify datasets (instead of numbers) provides various advantages when humans are involved, ie increased distinction and rememberability.
 

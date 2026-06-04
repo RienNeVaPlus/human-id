@@ -20,9 +20,6 @@ export interface Options {
 
 /**
  * Returns the human-id
- *
- * @param {Options|string|boolean} [options = {}]
- * @returns {string}
  */
 export function humanId(options: Options | string | boolean = {}): string {
 	if(typeof options === 'string') options = { separator: options }
@@ -49,9 +46,6 @@ export function humanId(options: Options | string | boolean = {}): string {
 
 /**
  * Returns the pool size for a set of options
- *
- * @param {Options} [options = {}]
- * @returns {number}
  */
 export function poolSize(options: Options = {}): number {
   const { adjectiveCount = 1, addAdverb = false } = options
@@ -60,9 +54,6 @@ export function poolSize(options: Options = {}): number {
 
 /**
  * Returns the max length for a set of options
- *
- * @param {Options} [options = {}]
- * @returns {number}
  */
 export function maxLength(options: Options = {}): number {
   const { adjectiveCount = 1, addAdverb = false, separator = '' } = options
@@ -76,9 +67,6 @@ export function maxLength(options: Options = {}): number {
 
 /**
  * Returns the min length for a set of options
- *
- * @param {Options} [options = {}]
- * @returns {number}
  */
 export function minLength(options: Options = {}): number {
   const { adjectiveCount = 1, addAdverb = false, separator = '' } = options

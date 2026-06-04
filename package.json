@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": "dist/cli.js",
+  "type": "module",
   "scripts": {
     "dev": "tsc -w",
     "build": "rm -rf ./dist && tsc",
@@ -27,6 +28,6 @@
     "url": "https://github.com/RienNeVaPlus/human-id/issues"
   },
   "devDependencies": {
-    "typescript": "^4.4.4"
+    "typescript": "^6.0.3"
   }
 }

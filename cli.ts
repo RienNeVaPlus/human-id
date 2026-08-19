@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { humanId } from './index'
+import { humanId } from './index.ts'
 
 // @ts-ignore
 const args = process.argv.slice(2)

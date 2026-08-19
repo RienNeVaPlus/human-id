@@ -1,4 +1,4 @@
-import {humanId, maxLength, minLength, poolSize} from './index'
+import {humanId, maxLength, minLength, poolSize} from './index.ts'
 
 const samples = 10
 const list = [...Array(samples)]

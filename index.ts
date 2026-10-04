@@ -49,7 +49,7 @@ export function humanId(options: Options | string | boolean = {}): string {
  */
 export function poolSize(options: Options = {}): number {
   const { adjectiveCount = 1, addAdverb = false } = options
-  return (adjectives.length * adjectiveCount) * nouns.length * verbs.length * (addAdverb ? adverbs.length : 1)
+  return adjectives.length ** adjectiveCount * nouns.length * verbs.length * (addAdverb ? adverbs.length : 1)
 }
 
 /**
